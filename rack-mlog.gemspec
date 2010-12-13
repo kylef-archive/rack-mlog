@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/rack/mongolog.rb",
+    "rack-mlog.gemspec",
     "test/helper.rb",
     "test/test_rack-mlog.rb"
   ]
