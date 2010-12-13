@@ -1,19 +1,18 @@
 = rack-mlog
 
-Description goes here.
+rack-mlog is a rack middleware to provide statistics and request logging via a MongoDB Database.
 
-== Contributing to rack-mlog
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+Example config.ru
 
-== Copyright
+  require 'rack/mongolog'
+  
+  use Rack::MongoLog
+  run MyApp.new
 
-Copyright (c) 2010 Kyle Fuller. See LICENSE.txt for
-further details.
+This will work on Heroku with MongoHQ.
+
+== mlog Configuration
+
+* :uri - This is the URI of the MongoDB, such as: `mongodb://user:pass@flame.mongohq.com:27051/mysite`
+* :collection - To specify a collection to use, default is `mlog`
 
