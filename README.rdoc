@@ -15,4 +15,10 @@ This will work on Heroku with MongoHQ.
 
 * :uri - This is the URI of the MongoDB, such as: `mongodb://user:pass@flame.mongohq.com:27051/mysite`
 * :collection - To specify a collection to use, default is `mlog`
+* :map - This is a Hash including key's to map into the Hash saved on the MongoDB collection, any maps here will be added to the default maps. This allows you to add into rack-mlog, such as adding a authenticated user onto the collection.
+
+== Example maps
+
+* :method => lambda { |env, status, headers, body| env['REQUEST_METHOD'] },
+* :ajax? => lambda { |env, status, headers, body| env['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' 
 
