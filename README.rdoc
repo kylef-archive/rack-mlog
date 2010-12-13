@@ -2,14 +2,23 @@
 
 rack-mlog is a rack middleware to provide statistics and request logging via a MongoDB Database.
 
-Example config.ru
+  gem install rack-mlog
+
+Example config.ru:
 
   require 'rack/mongolog'
   
   use Rack::MongoLog
   run MyApp.new
 
-This will work on Heroku with MongoHQ.
+Example config.ru with a custom MongoDB:
+
+  require 'rack/mongolog'
+
+  use Rack::MongoLog :uri => 'mongodb://user:pass@flame.mongohq.com:27051/mysite'
+  run MyApp.new
+
+Since this is a rack middleware it is fully compatible with any other rack compatible framework such as sinatra, rails, etc. It also works on heroku with MongoHQ.
 
 == mlog Configuration
 
